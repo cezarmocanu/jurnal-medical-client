@@ -1,6 +1,5 @@
 import { Button, Card, Elevation } from "@blueprintjs/core";
-import React,{ useEffect, useState } from "react";
-import {Endpoints} from '../../endpoints/Endpoints';
+import React,{ useState } from "react";
 
 function ArticlePage(){
     const [articles, setArticles] = useState([
@@ -9,7 +8,7 @@ function ArticlePage(){
         },
         {
             title:'Title 2'
-        }
+        },
         {
             title:'Title 3'
         }
