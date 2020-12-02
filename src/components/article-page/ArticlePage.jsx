@@ -3,18 +3,18 @@ import React,{ useEffect, useState } from "react";
 import {Endpoints} from '../../endpoints/Endpoints';
 
 function ArticlePage(){
-    const [articles, setArticles] = useState([]);
-
-    useEffect(()=> {
-        const fetchData = async () => {
-            setArticles(await Endpoints.article.get());
+    const [articles, setArticles] = useState([
+        {
+            title:'Title 1'
+        },
+        {
+            title:'Title 2'
         }
-        fetchData();
-    },[]);
+        {
+            title:'Title 3'
+        }
+    ]);
 
-    useEffect(()=>{
-        console.log(articles);
-    },[articles]);
 
     const renderArticles = () => {
         return articles.map( ({title}) => (
