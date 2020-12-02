@@ -1,9 +1,11 @@
 import {ArticlePage} from './article-page/ArticlePage';
+import {SideMenu} from'./sidemenu/SideMenu';
 
 function App() {
   return (
     <div>
-      <ArticlePage/>      
+      {/* <ArticlePage/>       */}
+      <SideMenu/>
     </div>
   );
 }
