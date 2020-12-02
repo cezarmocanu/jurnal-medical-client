@@ -10,7 +10,7 @@
 .full-component {
   width: 350px;
   height: 100vh;
-  border-right: 1px solid #48aff0;
+  border-right: 1px solid lightgray;
 }
 
 .item-in-side-menu {
