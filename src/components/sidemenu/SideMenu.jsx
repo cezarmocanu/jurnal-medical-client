@@ -1,39 +1,77 @@
 import React,{ useState } from "react";
 import {BookIcon,Menu} from 'evergreen-ui'
 import './SideMenu.css';
+import {Accordion} from '../accordion/Accordion'
 
+const ITEMS = [
+  {
+    title:"Cautare rapida...",
+  },
+  {
+    title:"Documente Utile",
+    isAccordion: true,
+    initiallyExpanded: true,
+    insideItems:[
+      {title:"2017"},
+      {title:"2018"},
+      {title:"2019"}
+    ]
+  },
+  {
+    title:"Colectii Anuale",
+    isAccordion: true,
+    insideItems:[
+      {title:"2017"},
+      {title:"2018"},
+      {title:"2019"}
+    ]
+  },
+  {
+    title:"Parteneri",
+    isAccordion: false,
+  },
+
+]
+
+const submenuItem = {
+  paddingTop : 20,
+  paddingBottom: 20,
+  margin: 0
+}
 
 function SideMenu(){
+  const [items, setItems] = useState(ITEMS);
 
-  const [items, setItems] = useState([
-    {
-        title:'Cautare rapida...',
-    },
-    {
-        title:'Colectii Anuale',
-    },
-    {
-        title:'Documente Utile',
-    },
-    {
-      title:'Universitatea Transilvania',
-    },
-    {
-      title:'Colegiul Medicilor Brasov',
-    },
-    {
-      title:'Facultatea de Medicina Brasov',
-    },
-]);
+  const renderSubmenuItem = ({title, insideItems, isAccordion, initiallyExpanded}) => {
+    if (isAccordion) {
+      return <Accordion 
+                title={title}
+                items={insideItems}
+                initiallyExpanded={initiallyExpanded}
+                canExpand={true}
+                style={{
+                  header: submenuItem,
+                  item: submenuItem
+                }}
+              />
+    }
+    return (
+      <Menu.Item 
+        style={submenuItem}>
+          {title}
+      </Menu.Item>
+    );
+  };
 
-  const renderItemsInSubmenu = () => {
-    return items.map(({title}) => (
-        <div>
-          <Menu.Item >{title}</Menu.Item>
+  const renderSubmenuContent = () => {
+    return items.map(item => (
+        <React.Fragment>
+          {renderSubmenuItem(item)}
           <Menu.Divider/>
-        </div>
-    ));
-};
+        </React.Fragment>
+      )
+    );
+  };
 
   return (
     <div className="full-component">
@@ -43,8 +81,8 @@ function SideMenu(){
       </div>
       <Menu>
           <Menu.Group>
-          <Menu.Divider/>
-            {renderItemsInSubmenu()}
+            <Menu.Divider/>
+            {renderSubmenuContent()}
           </Menu.Group>
       </Menu>
     </div>
