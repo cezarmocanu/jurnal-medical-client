@@ -1,12 +1,9 @@
 import React,{ useState } from "react";
-import {BookIcon,Menu} from 'evergreen-ui'
+import {BookIcon,Menu,SearchInput} from 'evergreen-ui'
 import './SideMenu.css';
 import {Accordion} from '../accordion/Accordion'
 
 const ITEMS = [
-  {
-    title:"Cautare rapida...",
-  },
   {
     title:"Documente Utile",
     isAccordion: true,
@@ -81,6 +78,10 @@ function SideMenu(){
       </div>
       <Menu>
           <Menu.Group>
+            <Menu.Divider/>
+            <Menu.Item className="sidemenu-form">
+              <SearchInput width="100%" margin={0} placeholder="Cautare rapida..." />
+            </Menu.Item>
             <Menu.Divider/>
             {renderSubmenuContent()}
           </Menu.Group>
