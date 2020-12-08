@@ -1,3 +1,5 @@
+@import "../../variabiles.scss";
+
 .header {
   display: flex;
   padding-bottom: 10px;
@@ -8,9 +10,10 @@
 }
 
 .full-component {
-  width: 350px;
+  width: $sidemenu-width;
   height: 100vh;
   border-right: 1px solid lightgray;
+  box-sizing: border-box;
 }
 
 .item-in-side-menu {
