@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 import {BookIcon,Menu} from 'evergreen-ui'
 import './SideMenu.css';
 import {Accordion} from '../accordion/Accordion'
+import { LABELS } from "../../strings";
 
 const ITEMS = [
   {
@@ -76,7 +77,7 @@ function SideMenu(){
   return (
     <div className="full-component">
       <div className="header">
-        <h2>Jurnalul Medical Brasov</h2>
+        <h2>{LABELS.title}</h2>
         <BookIcon></BookIcon>
       </div>
       <Menu>
