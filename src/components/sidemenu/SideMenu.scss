@@ -25,3 +25,17 @@
   padding-bottom: 0px;
   padding-top: 0px;
 }
+
+.sidemenu-form {
+  span {
+    margin: 0;
+
+    > div {
+      width: 100%;
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+}
