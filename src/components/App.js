@@ -1,19 +1,14 @@
+import React from 'react';
 import {SideMenu} from'./sidemenu/SideMenu';
-import {Accordion} from './accordion/Accordion'
+import './App.scss';
 
 function App() {
   
 
   return (
-    <div>
+    <React.Fragment>
       <SideMenu/>
-      {/* <Accordion
-        title="accordion1"
-        items={accordionItems}
-        initiallyExpanded={false}
-        canExpand={true}
-      /> */}
-    </div>
+    </React.Fragment>
   );
 }
 export {App};
