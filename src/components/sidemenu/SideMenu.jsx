@@ -80,7 +80,13 @@ function SideMenu(){
           <Menu.Group>
             <Menu.Divider/>
             <Menu.Item className="sidemenu-form">
-              <SearchInput width="100%" margin={0} placeholder="Cautare rapida..." />
+              <SearchInput
+                placeholder="Cautare rapida..." 
+                style={{
+                  width:"100%",
+                  margin:0
+                }}
+              />
             </Menu.Item>
             <Menu.Divider/>
             {renderSubmenuContent()}
