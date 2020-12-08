@@ -1,6 +1,6 @@
 import React,{ useState } from "react";
 import {BookIcon,Menu,SearchInput} from 'evergreen-ui'
-import './SideMenu.css';
+import './SideMenu.scss';
 import {Accordion} from '../accordion/Accordion'
 import { LABELS } from "../../strings";
 
@@ -83,10 +83,6 @@ function SideMenu(){
             <Menu.Item className="sidemenu-form">
               <SearchInput
                 placeholder="Cautare rapida..." 
-                style={{
-                  width:"100%",
-                  margin:0
-                }}
               />
             </Menu.Item>
             <Menu.Divider/>
