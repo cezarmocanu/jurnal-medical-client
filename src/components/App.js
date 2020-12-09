@@ -1,6 +1,7 @@
 import React from 'react';
 import {SideMenu} from'./sidemenu/SideMenu';
 import {Screen} from './screen/Screen';
+import {ArticlePage} from './pages/ArticlePage'
 import './App.scss';
 
 function App() {
@@ -9,54 +10,7 @@ function App() {
   return (
     <React.Fragment>
       <SideMenu/>
-      <Screen title="Hello">
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-        <h1>TEXT</h1>
-      </Screen>
+      <ArticlePage/>
     </React.Fragment>
   );
 }

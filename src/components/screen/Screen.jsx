@@ -12,7 +12,7 @@ function Screen({ title, children }) {
                     {title}
                 </h1>
             </Pane>
-
+            
             <Pane className="screen-content">
                 {children}
             </Pane>
