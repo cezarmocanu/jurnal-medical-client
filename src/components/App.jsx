@@ -1,30 +1,27 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import {SideMenu} from'./sidemenu/SideMenu';
-import {Screen} from './screen/Screen';
-import {ArticlePage} from './pages/ArticlePage';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { SideMenu } from './sidemenu/SideMenu';
+
+import { ArticlePage } from './pages/ArticlePage';
+import { HomePage } from './pages/HomePage';
 import './App.scss';
 
 function App() {
 
   return (
     <Router>
-      <SideMenu/>
+      <SideMenu />
       <Switch>
         <Route exact path='/'>
-          <Screen title="Home">
-            <Link to="/colectii">
-              <h1>Colectii</h1>
-            </Link>
-          </Screen>
+          <HomePage />
         </Route>
 
         <Route path='/colectii'>
-          <ArticlePage/>
+          <ArticlePage />
         </Route>
       </Switch>
-      
+
     </Router>
   );
 }
-export {App};
+export { App };
