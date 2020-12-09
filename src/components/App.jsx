@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {SideMenu} from'./sidemenu/SideMenu';
 import {Screen} from './screen/Screen';
+import {ArticlePage} from './pages/ArticlePage';
 import './App.scss';
 
 function App() {
@@ -19,11 +20,7 @@ function App() {
         </Route>
 
         <Route path='/colectii'>
-          <Screen title="Colectii">
-          <Link to="/">
-              <h1>Acasa</h1>
-            </Link>
-          </Screen>
+          <ArticlePage/>
         </Route>
       </Switch>
       
