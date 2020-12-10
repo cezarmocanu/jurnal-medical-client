@@ -5,8 +5,9 @@
 .screen{
     width: calc(100% - #{$sidemenu-width});
     height: 100vh;
+    margin-left: $sidemenu-width;
 
-    .screen-header{  
+    .screen-header{ 
         width: 100%;
         height: $screen-header-height;
         display: flex;  
@@ -15,7 +16,6 @@
         justify-content: flex-end;
         padding-right: 10px;
         align-items: center;
-        
     }
 
     .screen-content{
@@ -26,6 +26,5 @@
         min-height: calc(100vh - #{$screen-header-height});
         color:  $text-black;
         background-color: $base-white;
-             
     }
 }
