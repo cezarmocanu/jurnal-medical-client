@@ -2,6 +2,7 @@ import React from 'react'
 import { Pane} from 'evergreen-ui';
 import './Card.scss';
 import PropTypes from 'prop-types';
+import { LABELS } from "../../strings";
 
 
 function Card({headerTitle,footerText,children}) {
@@ -51,7 +52,7 @@ Card.defaultProps = {
 }
 
 Card.defaultProps = {
-  headerTitle: "Article title"
+  headerTitle: LABELS.loremSmall
 }
 
 export {Card};

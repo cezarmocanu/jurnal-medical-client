@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 import PropTypes from 'prop-types';
 import {Menu,CaretDownIcon,CaretUpIcon} from 'evergreen-ui'
 import './Accordion.css'
+import {LABELS} from '../../strings'
 
 function Accordion({title,items,initiallyExpanded,canExpand, style}){
 
@@ -42,9 +43,9 @@ function Accordion({title,items,initiallyExpanded,canExpand, style}){
 }
 
 Accordion.defaultProps = {
-  title: 'Default Title',
+  title: LABELS.loremSmall,
   items: [{
-    title:"This is a default list item"
+    title: LABELS.loremSmall
   }],
   initiallyExpanded: false,
   canExpand: false
