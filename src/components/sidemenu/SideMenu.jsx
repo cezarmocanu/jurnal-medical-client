@@ -8,7 +8,7 @@ import { LABELS } from "../../strings";
 
 const ITEMS = [
   {
-    title:"Documente Utile",
+    title:LABELS.usefulDocuments,
     isAccordion: true,
     initiallyExpanded: true,
     insideItems:[
@@ -18,7 +18,7 @@ const ITEMS = [
     ]
   },
   {
-    title:"Colectii Anuale",
+    title:LABELS.anualCollections,
     isAccordion: true,
     insideItems:[
       {title:"2017"},
@@ -27,9 +27,9 @@ const ITEMS = [
     ]
   },
   {
-    title:"Parteneri",
+    title:LABELS.partners,
     isAccordion: false,
-  },
+  }
 
 ]
 
@@ -86,7 +86,7 @@ function SideMenu(){
             <Menu.Divider/>
             <Menu.Item className="sidemenu-form">
               <SearchInput
-                placeholder="Cautare rapida..." 
+                placeholder={LABELS.fastSearch} 
               />
             </Menu.Item>
             <Menu.Divider/>
