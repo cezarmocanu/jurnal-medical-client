@@ -1,0 +1,41 @@
+@import "../../variabiles.scss";
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border-radius: $base-border-radius;
+
+  .card-row {
+    width: 100%;
+    color: $text-black;
+    align-items: center;
+    display: flex;
+  }
+
+  .card-header {
+    padding: $base-padding;
+    height: 50px;
+    border-top-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
+    background-color: $base-light-grey;
+  }
+
+  .card-footer {
+    background-color: $base-light-grey;
+    border-bottom-left-radius: $base-border-radius;
+    border-bottom-right-radius: $base-border-radius;
+    padding: $base-padding;
+    color: grey;
+  }
+
+  .card-content {
+    background-color: white;
+    height: 150px;
+    padding: $base-padding;
+    overflow: hidden;
+    display: block;
+    text-align: justify;
+  }
+}
