@@ -1,8 +1,7 @@
 import React from 'react';
-import { Pane, Text } from 'evergreen-ui';
+import { Pane} from 'evergreen-ui';
 import './Page.scss';
 import "../../variabiles.scss";
-
 
 function Page({ title, children }) {
     return (
@@ -12,7 +11,6 @@ function Page({ title, children }) {
                     {title}
                 </h1>
             </Pane>
-            
             <Pane className="screen-content">
                 {children}
             </Pane>

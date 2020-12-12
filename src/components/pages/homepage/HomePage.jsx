@@ -1,12 +1,21 @@
 import React from 'react';
-import { Pane, Text } from 'evergreen-ui';
 import { Page } from '../../page/Page';
 import './HomePage.scss';
 import {LABELS} from '../../../strings'
+import {Breadcrumb} from '../../breadcrumb/Breadcrumb'
+
+const CRUMBS = [
+    {
+      label: "Home",
+      path: "/"
+    }
+  ]
 
 function HomePage() {
     return (
-        <Page title = {LABELS.homePage}/>
+        <Page title = {LABELS.homePage}>
+            <Breadcrumb list={CRUMBS}/>
+        </Page>
     )
 }
 
