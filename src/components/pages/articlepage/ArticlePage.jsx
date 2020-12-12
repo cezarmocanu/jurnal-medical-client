@@ -1,5 +1,4 @@
 import React from 'react';
-import { Pane, Text } from 'evergreen-ui';
 import { Page } from '../../page/Page';
 import { Card } from '../../card/Card'
 import './ArticlePage.scss';

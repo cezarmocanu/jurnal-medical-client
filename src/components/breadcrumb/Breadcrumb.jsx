@@ -1,4 +1,4 @@
-import {React} from 'react'
+import React from 'react';
 import {BreadcrumbItem} from '../breadcrumbItem/BreadcrumbItem'
 import {ChevronRightIcon} from 'evergreen-ui';
 import './Breadcrumb.scss'
@@ -6,17 +6,22 @@ import './Breadcrumb.scss'
 function Breadcrumb ({list}) {
 
   const renderItems = () => {
-    return list.map((item,index) => (
-      <div className="breadcrumb">
-        <BreadcrumbItem path={item.path} label={item.label}/>
-        {index!==list.length-1?<ChevronRightIcon/>:null}
-      </div>
+    
+    return list.map((item,index) => {
+      const hasChevron = index !== list.length - 1;
+      return (
+        <React.Fragment>
+          <BreadcrumbItem path={item.path} label={item.label}/>
+          {hasChevron && <ChevronRightIcon/>}
+        </React.Fragment>
       )
-    );
-  };
+    })
+  }
 
-  return(
-    renderItems()
+  return (
+    <div className="breadcrumb">
+      {renderItems()}
+    </div>
   )
 }
 
