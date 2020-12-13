@@ -1,0 +1,41 @@
+.carousel{
+    margin-top: 100px;
+    height: 350px;
+    width: 700px;
+    position: relative;
+    display: flex;
+    opacity: 40%;   
+}
+
+.controlls{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.icon-left{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width:50px;
+    background: none;
+    border: transparent;
+    
+}
+
+.icon-right{
+    
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width:50px;
+    justify-content: flex-end;
+    background: none;
+    border: transparent;
+    
+}
