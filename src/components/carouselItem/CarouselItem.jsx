@@ -1,32 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './CarouselItem.scss';
+import { Pane } from 'evergreen-ui'
 
-function CarouselItem() {
-
-    let carouselArr = [1, 2, 3, 4, 5];
-    const [x, setX] = useState(0);
-    
-
+function CarouselItem({ title, description, backgroundImage, link }) {
     return (
-        <div className="carousel-item-content">
-            {carouselArr.map((item, index) => {
-                return (
-                    <div key={index} className="slide" style = {{transform: `translateX(${x}%)` }}>
-                        {item}
-                    </div>
-                )
-            })
-            }
-        </div>
+        <Pane>
+            <h1 className="title">{title}</h1>
+            <h2 className="description">{description}</h2>
+            <img className="carousel-image"src={backgroundImage} alt={title} />
+        </Pane>
     )
 }
 
-function OnClickLeft() {
-    setX(x + 100);
-}
 
-function OnClickRight() {
-    setX(x - 100);
-}
 
 export { CarouselItem };
