@@ -6,24 +6,34 @@ import '../carouselItem/CarouselItem.scss';
 
 function Carousel({ children }) {
 
-    const goLeft = () => {
-        const nextIndex = parseInt(Math.max(currentIndex - 1, 0));
+    const [currentSlide, setCurrentSlide] = useState(0);
 
-        setCurrentIndex(nextIndex);
+    const goLeft = () => {
+        const nextSlide = parseInt(Math.max(currentSlide - 1, 0));
+        setCurrentSlide(nextSlide);
     };
     const goRight = () => {
-        const nextIndex = parseInt(Math.min(currentIndex + 1, children.length - 1));
-        setCurrentIndex(nextIndex);
+        const nextSlide = parseInt(Math.min(currentSlide + 1, children.length - 1));
+        setCurrentSlide(nextSlide);
     };
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const goToIndex = (index) =>{
+        setCurrentSlide(index);
+    }
+
+    const renderDots = () => {
+        return children.map((slide, index) => {
+            const isSelected = index === currentSlide && "selected-dot";
+            return <div key={index} className={`dot ${isSelected}`} onClick={() => {goToIndex(index)}}></div>;
+        });
+    };
 
 
     return (
         <div className="carousel">
             <Pane>
                 <div className="carousel-content">
-                    {children[currentIndex]}
+                    {children[currentSlide]}
                 </div>
                 <div className="controlls">
                     <div>
@@ -43,11 +53,7 @@ function Carousel({ children }) {
                         </button>
                     </div>
                     <div className="button-box">
-                    <button className="button"><Icon icon={DotIcon} size={24} /></button>
-                    <button className="button"><Icon icon={DotIcon} size={24} /></button>
-                    <button className="button"><Icon icon={DotIcon} size={24} /></button>
-                    <button className="button"><Icon icon={DotIcon} size={24} /></button>
-                        
+                        {renderDots()}
                     </div>
                 </div>
             </Pane>
