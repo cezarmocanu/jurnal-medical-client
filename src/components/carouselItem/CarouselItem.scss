@@ -1,0 +1,31 @@
+.carousel-image{
+    width: 700px;
+    height: 350px;
+    position: relative;
+    opacity: 50%;
+    z-index: -1;
+    
+}
+
+.description{
+    
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    
+    
+}
+
+.title{
+    
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    
+}
+
