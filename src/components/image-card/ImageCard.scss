@@ -1,0 +1,51 @@
+@import "../../variabiles.scss";
+
+.image-card{
+    width:100%;
+    height: 200px;
+    display: flex;
+    margin-top: $base-margin;
+    border-radius: $base-border-radius;
+    .image-content{
+        width:200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden;
+        border-top-left-radius: $base-border-radius;
+        border-bottom-left-radius: $base-border-radius;
+        img {
+            height:100%;
+            border-top-left-radius: $base-border-radius;
+            border-bottom-left-radius: $base-border-radius;    
+        }
+        
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        width:calc(100% - 200px);
+        color:$text-black;
+        border-top-right-radius: $base-border-radius;
+        border-bottom-right-radius: $base-border-radius;
+        .content-header{
+            height:50%;
+            display: flex;
+            flex-direction: column;
+            padding:$padding-small;
+            overflow: hidden;
+            
+        }
+
+        .content-footer{
+            display: flex;
+            flex-direction: column;
+            height:50%;
+            padding:$padding-small;
+            overflow: hidden;
+            background-color: $base-light-grey;
+            
+        }
+    }
+}
