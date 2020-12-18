@@ -1,0 +1,31 @@
+@import "../../variabiles.scss";
+
+.language-dialog {
+  width: 400px;
+  .dialog-content {
+    padding: 0;
+    .language-field {
+      padding: $padding-small;
+      padding-left: $base-padding;
+      padding-right: $base-padding;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $text-black;
+      &:hover {
+        background-color: lighten($base-primary, 15);
+        cursor: pointer;
+        span {
+          color: $text-white;
+        }
+      }
+
+      &.checked {
+        background-color: lighten($base-primary, 25);
+        span {
+          color: $text-white;
+        }
+      }
+    }
+  }
+}

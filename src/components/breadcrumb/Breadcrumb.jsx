@@ -1,5 +1,5 @@
 import React from 'react';
-import {BreadcrumbItem} from '../breadcrumbItem/BreadcrumbItem'
+import {BreadcrumbItem} from '../breadcrumb-item/BreadcrumbItem'
 import {ChevronRightIcon} from 'evergreen-ui';
 import './Breadcrumb.scss'
 
