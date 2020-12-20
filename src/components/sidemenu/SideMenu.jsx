@@ -1,10 +1,10 @@
 import React,{ useState } from "react";
 import {Link} from 'react-router-dom';
-
 import {BookIcon,Menu,SearchInput} from 'evergreen-ui'
 import './SideMenu.scss';
 import {Accordion} from '../accordion/Accordion'
 import { LABELS } from "../../strings";
+import {LanguageSwitch} from "../language-switch/LanguageSwitch"
 
 const ITEMS = [
   {
@@ -30,7 +30,6 @@ const ITEMS = [
     title:LABELS.partners,
     isAccordion: false,
   }
-
 ]
 
 const submenuItem = {
@@ -41,6 +40,11 @@ const submenuItem = {
 
 function SideMenu(){
   const [items, setItems] = useState(ITEMS);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const renderModal = () => {
+    setModalIsOpen(true);
+  }
 
   const renderSubmenuItem = ({title, insideItems, isAccordion, initiallyExpanded}) => {
     if (isAccordion) {
@@ -89,6 +93,9 @@ function SideMenu(){
                 placeholder={LABELS.fastSearch} 
               />
             </Menu.Item>
+            <Menu.Divider/>
+            <Menu.Item onClick={renderModal}>Schimba limba</Menu.Item>
+            {modalIsOpen && <LanguageSwitch isOpened={modalIsOpen} onClose={()=>{setModalIsOpen(false)}}/>}
             <Menu.Divider/>
             {renderSubmenuContent()}
           </Menu.Group>

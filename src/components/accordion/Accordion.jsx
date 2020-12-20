@@ -24,6 +24,20 @@ function Accordion({title,items,initiallyExpanded,canExpand, style}){
     return items.map(item => renderItem(item));
   };
 
+  const changeChevron = () =>{
+    if(isOpened)
+      return <CaretUpIcon/>;
+    return <CaretDownIcon/>;
+  }
+
+  const renderChevron = () =>{
+    if(canExpand){
+      return changeChevron();
+    }
+      
+    return null;
+  }
+
   const handleOnClick = () =>{
     if(canExpand)
       setIsOpened(!isOpened);
@@ -31,10 +45,10 @@ function Accordion({title,items,initiallyExpanded,canExpand, style}){
 
   return (
     <React.Fragment>
-      <Menu.Item style={style.header} onClick={handleOnClick}>
+      <Menu.Item onClick={handleOnClick}>
         <div className="accordion-header disable-select">
           {title}
-          {isOpened?<CaretUpIcon/>:<CaretDownIcon/>}
+          {renderChevron()}
         </div>
       </Menu.Item>    
       {renderContent()}
