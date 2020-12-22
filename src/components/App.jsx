@@ -5,6 +5,7 @@ import { ArticlePage } from './pages/articlepage/ArticlePage';
 import { HomePage } from './pages/homepage/HomePage';
 import { CollectionPage } from './pages/collectionpage/CollectionPage'
 import { EditionPage } from './pages/editionpage/EditionPage';
+import {DocumentsPage} from './pages/documentpage/DocumentsPage'
 import {PartnersPage} from './pages/partnerspage/PartnersPage'
 import './App.scss';
 
@@ -25,6 +26,10 @@ function App() {
 
         <Route path='/colectii/:collectionId'>
           <EditionPage />
+        </Route>
+
+        <Route path='/documente'>
+          <DocumentsPage />
         </Route>
 
         <Route path='/parteneri'>
