@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Page} from '../../page/Page'
 import { LABELS } from '../../../strings';
-import {CollectionCard} from '../../collection-card/CollectionCard'
+import {CollectionCard} from '../../cards/collection-card/CollectionCard'
 import { Breadcrumb } from '../../breadcrumb/Breadcrumb'
 import { Spinner } from 'evergreen-ui';
 import { useParams } from 'react-router-dom';

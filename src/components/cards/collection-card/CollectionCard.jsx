@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from '../card/Card'
+import {Card} from '../../card/Card'
 import {Badge} from 'evergreen-ui';
 import './CollectionCard.scss'
 import {Link} from 'react-router-dom';

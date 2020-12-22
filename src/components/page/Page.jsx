@@ -5,7 +5,7 @@ import "../../variabiles.scss";
 
 function Page({ title, children, className }) {
     return (
-        <div className={`screen ${className}`}>
+        <div className={`screen ${className !== undefined ? className : ""}`}>
             <Pane className="screen-header">
                 <h1 color="white">
                     {title}
