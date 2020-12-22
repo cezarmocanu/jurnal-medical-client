@@ -13,7 +13,7 @@ const ITEMS = [
     initiallyExpanded: false,
   },
   {
-    title:LABELS.partners,
+    title:LABELS.partnersPage,
     isAccordion: false,
   }
 ]
