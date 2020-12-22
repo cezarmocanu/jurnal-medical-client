@@ -4,7 +4,7 @@ import {Menu,CaretDownIcon,CaretUpIcon} from 'evergreen-ui'
 import './Accordion.css'
 import {LABELS} from '../../strings'
 
-function Accordion({title,items,initiallyExpanded,canExpand, style}){
+function Accordion({title,items,initiallyExpanded,canExpand,style}){
 
   const [isOpened,setIsOpened] = useState(initiallyExpanded);
 
