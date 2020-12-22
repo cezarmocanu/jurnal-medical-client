@@ -56,7 +56,7 @@ const STRINGS = {
     loremSmall: "Lorem ipsum",
     loremLarge: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat enim sapiente, tenetur ducimus quia, quod dolorem dicta veniam maxime accusantium neque facere magni repellendus amet dolore consectetur tempora illo possimus.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat enim sapiente, tenetur ducimus quia, quod dolorem dicta veniam maxime accusantium neque facere magni repellendus amet dolore consectetur tempora illo possimus.",
     loremMedium: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat enim sapiente, tenetur ducimus quia, quod dolorem dicta veniam maxime accusantium neque facere magni repellendus amet dolore consectetur tempora illo possimus.Lorem ipsum dolor sit amet.",
-    partners : "Parteneri",
+    partnersPage : "Parteneri",
     popularKeywords: "Cuvinte cheie",
     title: "Jurnal Medical Brasovean",
     usefulDocuments: "Documente Utile",
