@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {Page} from '../../page/Page'
 import { LABELS } from '../../../strings';
 import { EditionCard } from '../../cards/edition-card/EditionCard';
@@ -16,10 +16,10 @@ const MOCK_IMAGES = [
 
 function EditionPage(){
     const [editions,setEditions] = useState([]);
-    const [params, setParams] = useState(useParams()); 
+    const params = useParams(); 
 
     //TODO: Endpoint logic
-    useState(()=>{
+    useEffect(()=>{
         const {collectionId} = params;
         
         const fetchData = async () => {
@@ -36,7 +36,7 @@ function EditionPage(){
             }
         }
         fetchData();
-    },[])
+    },[params])
 
     return (
         //TODO:Beautify code

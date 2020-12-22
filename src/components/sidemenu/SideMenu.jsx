@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React,{useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
 import {BookIcon,Menu,SearchInput} from 'evergreen-ui'
 import './SideMenu.scss';
@@ -11,15 +11,6 @@ const ITEMS = [
     title:LABELS.usefulDocuments,
     isAccordion: true,
     initiallyExpanded: true,
-    insideItems:[
-      {title:"2017"},
-      {title:"2018"},
-      {title:"2019"}
-    ]
-  },
-  {
-    title:LABELS.anualCollections,
-    isAccordion: true,
     insideItems:[
       {title:"2017"},
       {title:"2018"},
@@ -41,6 +32,26 @@ const submenuItem = {
 function SideMenu(){
   const [items, setItems] = useState(ITEMS);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [collections,setCollections] = useState([]);
+
+  useEffect(()=>{
+      const fetchCollection = async () => {
+        try{
+          const response = await fetch(`http://jurnal-medical-server.herokuapp.com/collection/all`);
+          const json = await response.json();
+          const {data} = json;
+          const finalData = data.map(collection => ({
+            link:`/colectii/${collection.id}`,
+            title: collection.title
+        }))
+          setCollections(finalData);
+        }
+        catch(e){
+          throw new Error(e);
+        }
+      }
+      fetchCollection();
+  },[])
 
   const renderModal = () => {
     setModalIsOpen(true);
@@ -53,6 +64,7 @@ function SideMenu(){
                 items={insideItems}
                 initiallyExpanded={initiallyExpanded}
                 canExpand={true}
+                hasLink={false}
                 style={{
                   header: submenuItem,
                   item: submenuItem
@@ -77,6 +89,21 @@ function SideMenu(){
     );
   };
 
+  const renderFetchedCollections = () => {
+    return <Accordion 
+      title="Colectii Anuale"
+      items={collections}
+      initiallyExpanded={false}
+      canExpand={true}
+      hasLink={false}
+      style={{
+        header: submenuItem,
+        item: submenuItem
+      }}
+    />
+  }
+
+
   return (
     <div className="full-component">
       <div className="header">
@@ -98,6 +125,8 @@ function SideMenu(){
             {modalIsOpen && <LanguageSwitch isOpened={modalIsOpen} onClose={()=>{setModalIsOpen(false)}}/>}
             <Menu.Divider/>
             {renderSubmenuContent()}
+            {renderFetchedCollections()}
+            <Menu.Divider/>
           </Menu.Group>
       </Menu>
     </div>

@@ -3,16 +3,23 @@ import PropTypes from 'prop-types';
 import {Menu,CaretDownIcon,CaretUpIcon} from 'evergreen-ui'
 import './Accordion.css'
 import {LABELS} from '../../strings'
+import {Link} from 'react-router-dom'
 
-function Accordion({title,items,initiallyExpanded,canExpand, style}){
+function Accordion({title,items,initiallyExpanded,canExpand,style}){
 
   const [isOpened,setIsOpened] = useState(initiallyExpanded);
 
-  const renderItem = ({title}) => {
+  const renderItem = (item) => {
+    const {title,link} = item;
     return (
         <div className="disable-select">
           <Menu.Divider/>
-          <Menu.Item style={style.item}>{title}</Menu.Item>
+          {link !== undefined ?
+          <Link to={link}>
+            <Menu.Item style={style.item}>{title}</Menu.Item>
+          </Link>
+          :
+          <Menu.Item style={style.item}>{title}</Menu.Item>}
         </div>
     );
   };
@@ -34,7 +41,6 @@ function Accordion({title,items,initiallyExpanded,canExpand, style}){
     if(canExpand){
       return changeChevron();
     }
-      
     return null;
   }
 
