@@ -12,8 +12,6 @@ function CollectionPage(){
       <CollectionCard/>
       <CollectionCard/>
       <CollectionCard/>
-      <CollectionCard/>
-      <CollectionCard/>
     </Page>
   );
 }

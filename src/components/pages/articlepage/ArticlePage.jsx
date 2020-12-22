@@ -13,8 +13,8 @@ const CRUMBS = [
     path: "/"
   },
   {
-    label: "Colectii",
-    path: "/colectii"
+    label: "Articole",
+    path: "/articole"
   }
 ]
 

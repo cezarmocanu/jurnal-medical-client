@@ -4,14 +4,14 @@ import {Badge} from 'evergreen-ui';
 import './CollectionCard.scss'
 import {Link} from 'react-router-dom';
 
-function CollectionCard () {
+function CollectionCard ({title,id} = {}) {
   const onClickFunction = () => {
-    
+    console.log("Click");
   }
 
   return (
-    <Link className="collection-card-content" to="/colectii/collectionID">
-      <Card headerTitle="Colectia 2017" onClick={onClickFunction}>
+    <Link className="collection-card-content" to={`/colectii/${id}`}>
+      <Card headerTitle={title} onClick={onClickFunction}>
         <Badge color="green">Editia 1</Badge>
       </Card>
     </Link>
