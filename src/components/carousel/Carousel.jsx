@@ -4,7 +4,7 @@ import { Pane } from 'evergreen-ui'
 import './Carousel.scss';
 import '../carouselItem/CarouselItem.scss';
 
-function Carousel({ children }) {
+function Carousel({ children, className }) {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -30,7 +30,7 @@ function Carousel({ children }) {
 
 
     return (
-        <div className="carousel">
+        <div className={`carousel ${className}`}>
             <Pane>
                 <div className="carousel-content">
                     {children[currentSlide]}

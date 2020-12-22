@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { SideMenu } from './sidemenu/SideMenu';
 import { ArticlePage } from './pages/articlepage/ArticlePage';
@@ -14,6 +15,9 @@ function App() {
 
   return (
     <Router>
+      <Helmet>
+            <title>Jurnal Medical Brasovean</title>
+      </Helmet>
       <SideMenu />
       <Switch>
         <Route exact path='/'>

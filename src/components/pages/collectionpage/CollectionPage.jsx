@@ -1,7 +1,7 @@
 import React from 'react';
 import {Page} from '../../page/Page'
 import { LABELS } from '../../../strings';
-import {CollectionCard} from '../../collection-card/CollectionCard'
+import {CollectionCard} from '../../cards/collection-card/CollectionCard'
 
 
 function CollectionPage(){
