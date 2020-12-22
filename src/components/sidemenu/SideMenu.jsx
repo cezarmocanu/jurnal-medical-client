@@ -32,7 +32,6 @@ const submenuItem = {
 function SideMenu(){
   const [items, setItems] = useState(ITEMS);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [collections,setCollections] = useState([]);
 
   useEffect(()=>{
       const fetchCollection = async () => {
@@ -44,7 +43,16 @@ function SideMenu(){
             link:`/colectii/${collection.id}`,
             title: collection.title
         }))
-          setCollections(finalData);
+          setItems([
+            ...ITEMS.slice(0,1),
+            {
+              title:LABELS.anualCollections,
+              isAccordion: true,
+              initiallyExpanded: false,
+              insideItems:finalData
+            },
+            ...ITEMS.slice(1),
+          ]);
         }
         catch(e){
           throw new Error(e);
@@ -89,21 +97,6 @@ function SideMenu(){
     );
   };
 
-  const renderFetchedCollections = () => {
-    return <Accordion 
-      title="Colectii Anuale"
-      items={collections}
-      initiallyExpanded={false}
-      canExpand={true}
-      hasLink={false}
-      style={{
-        header: submenuItem,
-        item: submenuItem
-      }}
-    />
-  }
-
-
   return (
     <div className="full-component">
       <div className="header">
@@ -125,13 +118,11 @@ function SideMenu(){
             {modalIsOpen && <LanguageSwitch isOpened={modalIsOpen} onClose={()=>{setModalIsOpen(false)}}/>}
             <Menu.Divider/>
             {renderSubmenuContent()}
-            {renderFetchedCollections()}
             <Menu.Divider/>
           </Menu.Group>
       </Menu>
     </div>
-)
-
+  )
 }
 
 export {SideMenu};
