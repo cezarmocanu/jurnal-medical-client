@@ -22,11 +22,11 @@ function App() {
           <ArticlePage />
         </Route>
         
-        <Route path='/colectii'>
+        <Route exact path='/colectii'>
           <CollectionPage />
         </Route>
 
-        <Route path='/editii'>
+        <Route path='/colectii/:collectionId'>
           <EditionPage />
         </Route>
       </Switch>
