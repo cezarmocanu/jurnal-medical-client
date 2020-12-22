@@ -1,0 +1,14 @@
+@import "../../variabiles.scss";
+
+.collection-card-content {
+  // background-color: white;
+  // padding: $base-padding;
+  // overflow: hidden;
+  display: block;
+  text-align: justify;
+  text-decoration: none;
+  // width: 33.3%;
+  .card-content {
+    height: 30px;
+  }
+}
