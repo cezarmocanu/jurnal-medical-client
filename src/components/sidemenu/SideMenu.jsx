@@ -10,11 +10,12 @@ const ITEMS = [
   {
     title:LABELS.usefulDocuments,
     isAccordion: false,
-    initiallyExpanded: false,
+    link:`/documente`
   },
   {
     title:LABELS.partnersPage,
     isAccordion: false,
+    link:`/parteneri`
   }
 ]
 
@@ -44,7 +45,7 @@ function SideMenu(){
               title:LABELS.anualCollections,
               isAccordion: true,
               initiallyExpanded: false,
-              insideItems:finalData
+              insideItems:finalData,
             },
             ...ITEMS.slice(1),
           ]);
@@ -60,14 +61,13 @@ function SideMenu(){
     setModalIsOpen(true);
   }
 
-  const renderSubmenuItem = ({title, insideItems, isAccordion, initiallyExpanded}) => {
+  const renderSubmenuItem = ({title, insideItems, isAccordion, initiallyExpanded,link}) => {
     if (isAccordion) {
       return <Accordion 
                 title={title}
                 items={insideItems}
                 initiallyExpanded={initiallyExpanded}
                 canExpand={true}
-                hasLink={false}
                 style={{
                   header: submenuItem,
                   item: submenuItem
@@ -75,10 +75,12 @@ function SideMenu(){
               />
     }
     return (
-      <Menu.Item 
-        style={submenuItem}>
-          {title}
-      </Menu.Item>
+      <Link to={link}>
+        <Menu.Item 
+          style={submenuItem}>
+            {title}
+        </Menu.Item>
+      </Link>
     );
   };
 
