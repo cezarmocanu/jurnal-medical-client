@@ -5,6 +5,7 @@ import { LABELS } from '../../../strings';
 import { Carousel } from '../../carousel/Carousel';
 import { CarouselItem } from '../../carouselItem/CarouselItem';
 import { Button, Heading, Text, CaretRightIcon } from 'evergreen-ui';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
   
@@ -18,7 +19,9 @@ function HomePage() {
           <Text size={600}>{LABELS.lorem(30)}</Text>
         </div>
         <div className="actions">
-          <Button iconBefore={CaretRightIcon} appearance="primary">{LABELS.seeCollections}</Button>
+          <Link to='/colectii'>
+            <Button iconBefore={CaretRightIcon} appearance="primary">{LABELS.seeCollections}</Button>
+          </Link>
         </div>
       </div>
       <Carousel className="home-carousel">
