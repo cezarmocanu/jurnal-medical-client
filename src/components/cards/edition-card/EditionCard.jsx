@@ -6,13 +6,13 @@ import { ImageCard } from '../../image-card/ImageCard';
 import { LABELS } from '../../../strings';
 import './EditionCard.scss';
 
-function EditionCard({title, id} = {}) {
+function EditionCard({title, image, id} = {}) {
 
     
     return (
         <Link to={`/${id}/articles`} className="edition-card-wrapper">
             <ImageCard
-                image={'http://webbut.unitbv.ro/jmb/00%20coperti/coperta%202a.jpg'}
+                image={image}
                 headerContent={
                     <Heading size={600}>{title}</Heading>
                 }

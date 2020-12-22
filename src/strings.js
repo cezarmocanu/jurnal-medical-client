@@ -36,7 +36,6 @@ const generateLorem = (nrWords) => {
         const word = WORDS[parseInt(Math.random() * WORDS.length)];
         result = result + " " + word;
     }
-    console.log(result);
     return result;
 };
 
