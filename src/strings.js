@@ -2,6 +2,7 @@ const STRINGS = {
     anualCollections: "Colectii Anuale",
     articlePage: "Articole",
     collectionPage: "Colectii",
+    editions: "Editii",
     fastSearch : "Cautare rapida...",
     homePage : "Acasa",
     loremSmall: "Lorem ipsum",
