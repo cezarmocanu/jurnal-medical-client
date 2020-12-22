@@ -18,7 +18,7 @@ const ITEMS = [
     ]
   },
   {
-    title:LABELS.partners,
+    title:LABELS.partnersPage,
     isAccordion: false,
   }
 ]
