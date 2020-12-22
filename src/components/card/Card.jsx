@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { LABELS } from "../../strings";
 
 
-function Card({headerTitle,footerText,children}) {
+function Card({onClick,headerTitle,footerText,children,className}) {
   const renderFooter = () => {
     if ( footerText === "" || footerText === undefined || footerText === null) {
       return null;
@@ -23,19 +23,20 @@ function Card({headerTitle,footerText,children}) {
 
   return (
     <Pane
-        className="card"
-        elevation="4"
+        onClick={onClick}
+        className={`card ${className}`}
+        elevation={4}
       >
         <Pane 
         className="card-row card-header"
-        elevation="0"
+        elevation={0}
         >
           <h3>{headerTitle}</h3>
         </Pane>
 
         <Pane 
         className="card-row card-content"
-        elevation="0"
+        elevation={0}
         >
           {children}
         </Pane>
