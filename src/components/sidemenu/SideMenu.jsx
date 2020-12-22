@@ -34,22 +34,24 @@ function SideMenu(){
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [collections,setCollections] = useState([]);
 
-  const fetchCollection = async () => {
-    try{
-      const response = await fetch(`http://jurnal-medical-server.herokuapp.com/collection/all`);
-      const json = await response.json();
-      const {data} = json;
-      const finalData = data.map(collection => ({...collection}));
-      setCollections(finalData);
-    }
-    catch(e){
-      throw new Error(e);
-    }
-  }
-
-  useEffect(() => {
-    fetchCollection();  
-  }, [])
+  useEffect(()=>{
+      const fetchCollection = async () => {
+        try{
+          const response = await fetch(`http://jurnal-medical-server.herokuapp.com/collection/all`);
+          const json = await response.json();
+          const {data} = json;
+          const finalData = data.map(collection => ({
+            link:`/colectii/${collection.id}`,
+            title: collection.title
+        }))
+          setCollections(finalData);
+        }
+        catch(e){
+          throw new Error(e);
+        }
+      }
+      fetchCollection();
+  },[])
 
   const renderModal = () => {
     setModalIsOpen(true);
@@ -62,6 +64,7 @@ function SideMenu(){
                 items={insideItems}
                 initiallyExpanded={initiallyExpanded}
                 canExpand={true}
+                hasLink={false}
                 style={{
                   header: submenuItem,
                   item: submenuItem
@@ -92,6 +95,7 @@ function SideMenu(){
       items={collections}
       initiallyExpanded={false}
       canExpand={true}
+      hasLink={false}
       style={{
         header: submenuItem,
         item: submenuItem
