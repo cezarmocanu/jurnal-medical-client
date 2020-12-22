@@ -1,0 +1,24 @@
+@import "../../../variabiles.scss";
+
+.edition-page{
+    .screen-content{
+        flex-wrap:wrap;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .keyword-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: $padding-small;
+        .keyword{
+            
+            width: fit-content;
+            margin-left: $margin-xsmall;
+        }
+    }
+    
+}

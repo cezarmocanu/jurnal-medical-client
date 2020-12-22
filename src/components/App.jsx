@@ -4,8 +4,9 @@ import { SideMenu } from './sidemenu/SideMenu';
 import { ArticlePage } from './pages/articlepage/ArticlePage';
 import { HomePage } from './pages/homepage/HomePage';
 import {CollectionPage} from './pages/collectionpage/CollectionPage'
-import {Page} from './page/Page'
+import { EditionPage } from './pages/editionpage/EditionPage';
 import './App.scss';
+
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
         </Route>
 
         <Route path='/colectii/:collectionId'>
-          <Page title="Edition"/>
+          <EditionPage />
         </Route>
       </Switch>
 

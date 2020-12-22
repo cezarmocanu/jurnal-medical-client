@@ -3,9 +3,9 @@ import { Pane} from 'evergreen-ui';
 import './Page.scss';
 import "../../variabiles.scss";
 
-function Page({ title, children }) {
+function Page({ title, children, className }) {
     return (
-        <div className="screen">
+        <div className={`screen ${className}`}>
             <Pane className="screen-header">
                 <h1 color="white">
                     {title}
