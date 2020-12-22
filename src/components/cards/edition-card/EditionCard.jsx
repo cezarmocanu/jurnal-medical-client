@@ -10,7 +10,7 @@ function EditionCard({title, image, id} = {}) {
 
     
     return (
-        <Link to={`/${id}/articles`} className="edition-card-wrapper">
+        <Link to={`/editii/${id}`} className="edition-card-wrapper">
             <ImageCard
                 image={image}
                 headerContent={
