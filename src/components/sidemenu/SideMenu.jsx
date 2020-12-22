@@ -9,13 +9,8 @@ import {LanguageSwitch} from "../language-switch/LanguageSwitch"
 const ITEMS = [
   {
     title:LABELS.usefulDocuments,
-    isAccordion: true,
-    initiallyExpanded: true,
-    insideItems:[
-      {title:"2017"},
-      {title:"2018"},
-      {title:"2019"}
-    ]
+    isAccordion: false,
+    initiallyExpanded: false,
   },
   {
     title:LABELS.partners,
